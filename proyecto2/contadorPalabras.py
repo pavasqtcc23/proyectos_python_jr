@@ -13,11 +13,20 @@ from tokenize import String
 import csv
 import string
 
+pensamiento = input("Hola que esta pensado")
+f  = open("declaracion.txt","w")
+f.write(pensamiento)
+
+
 translator = str.maketrans('', '', string.punctuation)
 
+#creo una lista vacia 
 word_count = {}
-text = open('declaration.txt').read()
 
+# abrir un documento declaracion para contar las palabras 
+text = open('declaracion.txt').read()
+
+#Usa la funcion split() para separar el texto en palabras
 words = text.split()
 for word in words:
     word = word.translate(translator).lower()
